@@ -27,7 +27,7 @@ class CommentsController < ApiController
   def show
     @comment = @post.comments.find(params[:id])
     if @comment.present?
-      render json: CommentSerializer.new(@comment).serializable_hash, status: :updated
+      render json: CommentSerializer.new(@comment).serializable_hash, status: :ok
     else
       render json: { message: 'comments not exits for this id' }
     end
@@ -36,7 +36,7 @@ class CommentsController < ApiController
   def update
     @comment = @post.comments.find(params[:id])
     if @comment.update(comment_params)
-      render json: CommentSerializer.new(@comment).serializable_hash, status: :updated
+      render json: CommentSerializer.new(@comment).serializable_hash, status: :ok
     else
       render json: { error: errors.full_messages }
     end
@@ -67,7 +67,7 @@ class CommentsController < ApiController
   def find_and_authorize_post
     if @user.user_type == 'Author' || @user.user_type == 'Reader'
       @post = @user.posts.find_by(id: params[:post_id])
-      render json: { error: 'post not exits for this user id ' }, status: :not_found unless @post
+      render json: { error: 'post not exits for this id ' }, status: :not_found unless @post
       authorize_user
     else
       render json: { message: 'You are not auhorized' }, status: :not_found unless @post

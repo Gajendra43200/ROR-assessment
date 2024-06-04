@@ -1,4 +1,3 @@
-require 'rails_helper'
 class NewsArticlesController < ApiController
   def index
     @articles = NewsApiService.fetch_top_headlines

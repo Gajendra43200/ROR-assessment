@@ -10,7 +10,6 @@ class UsersController < ApiController
   end
 
   def create
-    byebug
     user = User.new(user_params)
     if user.save
       token = UsersController.new.jwt_encode(user_id: user.id)

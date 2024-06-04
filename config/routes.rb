@@ -7,10 +7,7 @@ Rails.application.routes.draw do
   resources :news_articles, only: [:index]
   resources :users do
     resources :blogs do
-      resources :posts do
-        resources :comments
-        resources :likes
-      end
+      resources :posts
     end
   end
 
