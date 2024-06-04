@@ -1,0 +1,15 @@
+<h1>Top Headlines</h1>
+
+<% if @articles.any? %>
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <h2><%= article['title'] %></h2>
+        <p><%= article['description'] %></p>
+        <p><%= link_to 'Read more', article['url'] %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No articles to display.</p>
+<% end %>

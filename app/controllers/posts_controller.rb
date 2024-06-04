@@ -45,7 +45,6 @@ class PostsController < ApiController
   end
 
   def destroy
-    byebug
     if @post.destroy
       render json: { message: 'post deleted successfully' }, status: :ok
     else
@@ -83,7 +82,6 @@ class PostsController < ApiController
   end
 
   def filter_posts(posts)
-    byebug
     posts = posts.where(title: params[:title]) if params[:title].present?
 
     posts = posts.where(author_id: params[:author_id]) if params[:author_id].present?

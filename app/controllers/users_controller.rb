@@ -10,6 +10,7 @@ class UsersController < ApiController
   end
 
   def create
+    byebug
     user = User.new(user_params)
     if user.save
       token = UsersController.new.jwt_encode(user_id: user.id)
@@ -43,14 +44,11 @@ class UsersController < ApiController
 
   def find_and_authorize_user
     @user = User.find_by(id: params[:id])
-
     unless @user
       render json: { error: 'User not found for this id' }, status: :not_found
       return
     end
-
     return if @current_user.present? && @user == @current_user
-
     render json: { error: 'please enter your id' }, status: :unauthorized
   end
 

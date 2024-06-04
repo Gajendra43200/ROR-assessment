@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   post 'login', to: 'authentication#login'
+  resources :news_articles, only: [:index]
   resources :users do
     resources :blogs do
       resources :posts do
