@@ -16,7 +16,7 @@ This project is a blogging platform built with Ruby on Rails. It includes user a
 * To find routes related to a specific controller (e.g., users), you can use the following command:
 * rails routes | grep users
 * rails routes (for all routes)
-* I am also attached postman collection i main.
+* I am also attached postman collection.
 
 
 ## Run the Test Suite
@@ -27,8 +27,8 @@ This project is a blogging platform built with Ruby on Rails. It includes user a
 ## Features Of Project 
 
 ## User Authentication and Management
-* Users can create an account and authenticate themselves.
-* Implement two-factor authentication (2FA) for enhanced security.
+* Users can create an account and authenticate themselves(JWT).
+* Implement two-factor authentication (2FA) for enhanced security(rotp,qrcode gem used).
 
 ## Blog Posts Management
 * Users can create, edit, and delete blog posts.
