@@ -17,4 +17,10 @@ Rails.application.routes.draw do
       resources :likes
     end
   end
+  resources :users do
+    member do
+      post 'enable_2fa'
+      post 'verify_2fa'
+    end
+  end
 end

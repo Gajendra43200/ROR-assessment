@@ -93,6 +93,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chunky_png (1.4.0)
     concurrent-ruby (1.3.1)
     crack (1.0.0)
       bigdecimal
@@ -236,6 +237,11 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.8)
       strscan (>= 3.0.9)
+    rotp (6.3.0)
+    rqrcode (2.2.0)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.2.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.0)
@@ -333,6 +339,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.3)
   rails-controller-testing
+  rotp
+  rqrcode
   rspec-rails
   selenium-webdriver
   shoulda-matchers

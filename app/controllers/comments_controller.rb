@@ -77,6 +77,7 @@ class CommentsController < ApiController
 
   def authorize_user
     return if @current_user.present? && @user == @current_user
+
     render json: { error: 'please enter login user id' }, status: :unauthorized
   end
 

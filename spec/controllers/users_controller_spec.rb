@@ -26,7 +26,7 @@ RSpec.describe UsersController, type: :controller do
     context 'create user' do
       it 'user creates a successfuly' do
         post :create,
-             params: { username: 'gajendra12@gmail.com', user_type: 'Author', email: 'gajendra132@gmail.com',
+             params: { username: 'gajendra12@gmail.com', user_type: 'Author', email: 'gajendra133462@gmail.com',
                        password_digest: user.password_digest }
         expect(response.status).to eq(201)
       end

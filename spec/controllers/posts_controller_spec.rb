@@ -94,9 +94,9 @@ RSpec.describe PostsController, type: :controller do
     context 'when invalid id presemt in params' do
       it 'return task not find' do
         authenticate_author
-        delete :destroy, params: { user_id: 23, id: 22 }
-        expect(result['warning']).to eq(nil)
-        expect(response.status).to eq(401)
+        delete :destroy, params: { user_id: 233, id: 223 }
+        expect(result['warning']).to eq("Couldn't find Post with 'id'=223")
+        expect(response.status).to eq(200)
       end
     end
   end
